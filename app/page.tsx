@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { featuredArticles as stories, quickReadArticles as quickReads, topics } from "./articles";
+import SecondaryNav from "./SecondaryNav";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -39,12 +40,15 @@ export default function Home() {
         <div className="hero-orbit hero-orbit-two" />
       </section>
 
-      <section className="ticker" aria-label="Trending topics">
-        <a className="ticker-active" href="#stories">Latest</a><i />
-        <a href="#quick-reads">Quick reads</a><i />
-        <a href="#topics">Explore</a><i />
-        <a href="#newsletter">The weekly brief</a>
-      </section>
+      <SecondaryNav
+        label="Homepage sections"
+        items={[
+          { href: "#stories", label: "Latest" },
+          { href: "#quick-reads", label: "Quick reads" },
+          { href: "#topics", label: "Explore" },
+          { href: "#newsletter", label: "The weekly brief" },
+        ]}
+      />
 
       <section className="stories section" id="stories">
         <div className="section-heading">

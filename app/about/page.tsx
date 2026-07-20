@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SecondaryNav from "../SecondaryNav";
 
 export const metadata: Metadata = {
   title: "About — TechSpot",
@@ -29,12 +30,15 @@ export default function AboutPage() {
         <div className="about-orbit" aria-hidden="true"><span>T</span></div>
       </section>
 
-      <nav className="ticker about-ticker" aria-label="About page sections">
-        <a className="ticker-active" href="#purpose">Our purpose</a><i />
-        <a href="#principles">What guides us</a><i />
-        <a href="#team">The team</a><i />
-        <a href="#stay-curious">The weekly brief</a>
-      </nav>
+      <SecondaryNav
+        label="About page sections"
+        items={[
+          { href: "#purpose", label: "Our purpose" },
+          { href: "#principles", label: "What guides us" },
+          { href: "#team", label: "The team" },
+          { href: "#stay-curious", label: "The weekly brief" },
+        ]}
+      />
 
       <section className="about-intro section" id="purpose">
         <span className="kicker">Our purpose</span>
