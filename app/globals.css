@@ -89,3 +89,25 @@ footer{background:var(--ink);color:#f1efe8;padding:80px 4.5vw 28px}.footer-top{d
 .next-story>a>span { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; }.next-story strong{font-size:clamp(28px,4vw,55px);line-height:1;letter-spacing:-.05em}.next-story i{font-size:28px;font-style:normal}
 .article-footer { min-height:150px; background:var(--ink); color:var(--paper); padding:0 4.5vw; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; font-size:10px; text-transform:uppercase; letter-spacing:1.2px; }.article-footer>a:last-child{justify-self:end}.article-footer .brand{text-transform:none;letter-spacing:-.7px;font-size:20px}
 @media(max-width:800px){.article-back{margin-bottom:45px}.article-hero{padding-top:55px}.article-byline{flex-wrap:wrap}.article-lead{padding:0}.article-lead figcaption{padding:0 5vw}.article-layout{grid-template-columns:1fr;padding-top:75px}.article-share{position:static;flex-direction:row;border-bottom:1px solid var(--line);padding-bottom:20px}.article-body blockquote{margin:50px 0}.next-story>a{grid-template-columns:1fr 25px;padding:25px 0}.next-story>a>span{grid-column:1 / -1}.article-footer{grid-template-columns:1fr auto}.article-footer>span{display:none}}
+
+/* Topic pages */
+.topic-hero { min-height:620px; padding:70px 4.5vw 80px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; border-bottom:1px solid var(--line); }
+.topic-hero .article-back { position:absolute; top:55px; left:4.5vw; }
+.topic-hero h1 { position:relative; z-index:1; margin:27px 0 25px; max-width:1050px; font-size:clamp(68px,10vw,150px); line-height:.83; letter-spacing:-.08em; }
+.topic-hero>p { position:relative; z-index:1; max-width:610px; margin:0 0 0 auto; font-family:Georgia,serif; font-size:23px; line-height:1.5; color:#4d4b45; }
+.topic-orbit { position:absolute; width:440px; height:440px; border:1px solid rgba(128,105,255,.45); border-radius:50%; right:12%; top:70px; }
+.topic-orbit:after { content:""; position:absolute; width:280px; height:280px; border:1px solid rgba(128,105,255,.45); border-radius:50%; top:80px; left:80px; }
+.topic-orbit span { position:absolute; width:18px; height:18px; border-radius:50%; background:var(--lime); top:40px; right:66px; }
+.topic-results { padding:110px 4.5vw 130px; }
+.topic-results-heading { padding-bottom:25px; border-bottom:1px solid var(--ink); display:flex; justify-content:space-between; align-items:center; }
+.topic-results-heading>span:last-child { color:#747168; font-size:10px; text-transform:uppercase; letter-spacing:1.2px; }
+.topic-article-grid { display:grid; grid-template-columns:1fr 1fr; gap:90px 32px; padding-top:55px; }
+.topic-card { position:relative; }
+.topic-card-image { display:block; position:relative; aspect-ratio:1.35; overflow:hidden; background:#d5d2ca; }
+.topic-card-image img { width:100%; height:100%; object-fit:cover; filter:saturate(.72) contrast(1.05); transition:transform .45s ease; }.topic-card-image:hover img{transform:scale(1.025)}
+.topic-card-number { position:absolute; right:0; top:calc((100vw - 9vw - 32px) / 2 / 1.35 + 19px); color:#98958d; font-size:10px; letter-spacing:1px; }
+.topic-card h2 { max-width:650px; margin:15px 0 13px; font-size:clamp(31px,4vw,55px); line-height:1; letter-spacing:-.055em; }.topic-card h2 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.topic-card>p { max-width:530px; color:#56534d; line-height:1.65; font-size:14px; }
+.topic-read-link { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); margin-top:28px; padding-top:17px; font-size:10px; text-transform:uppercase; letter-spacing:1.2px; font-weight:800; }.topic-read-link:hover{color:var(--violet)}
+.topic-more { background:#d9d5cb; padding:90px 4.5vw; }.topic-more>div{margin-top:35px;border-top:1px solid var(--ink)}.topic-more a{min-height:82px;border-bottom:1px solid var(--ink);display:flex;justify-content:space-between;align-items:center;font-size:clamp(24px,3vw,42px);letter-spacing:-.04em;transition:.2s}.topic-more a:hover{background:var(--lime);padding:0 15px}.topic-more a span{font-size:17px}
+@media(max-width:800px){.topic-hero{min-height:560px;padding-bottom:55px}.topic-hero>p{margin-left:0;font-size:19px}.topic-orbit{right:-220px;top:70px}.topic-article-grid{grid-template-columns:1fr;gap:70px}.topic-card-number{top:auto;bottom:0}.topic-results{padding-top:75px}.topic-more{padding-top:70px;padding-bottom:70px}}

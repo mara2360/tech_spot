@@ -129,6 +129,25 @@ export const articles: Article[] = [
 export const featuredArticles = articles.slice(0, 3);
 export const quickReadArticles = articles.slice(3);
 
+export const topics = [
+  { slug: "artificial-intelligence", name: "Artificial Intelligence", description: "Agents, models, and the changing relationship between people and intelligent software.", articleSlugs: ["ai-assistants-to-ai-teammates", "smaller-models-faster-infrastructure"] },
+  { slug: "cybersecurity", name: "Cybersecurity", description: "Practical reporting on digital trust, resilient products, privacy, and the evolving threat landscape.", articleSlugs: ["security-as-a-product-feature", "ambient-computing-is-ready"] },
+  { slug: "web-development", name: "Web Development", description: "Tools, patterns, and ideas helping teams build a faster, simpler, and more durable web.", articleSlugs: ["frontend-stack-simplifying", "new-economics-of-open-source"] },
+  { slug: "cloud", name: "Cloud", description: "The infrastructure shifts changing how modern software is deployed, scaled, and experienced.", articleSlugs: ["smaller-models-faster-infrastructure", "security-as-a-product-feature"] },
+  { slug: "open-source", name: "Open Source", description: "The maintainers, communities, and economic models behind the software commons.", articleSlugs: ["new-economics-of-open-source", "frontend-stack-simplifying"] },
+  { slug: "hardware", name: "Hardware", description: "New devices, chips, sensors, and interfaces moving computing into the world around us.", articleSlugs: ["ambient-computing-is-ready", "smaller-models-faster-infrastructure"] },
+  { slug: "future-of-work", name: "Future of Work", description: "How AI, automation, and better tools are reshaping teams, skills, and creative work.", articleSlugs: ["ai-assistants-to-ai-teammates", "frontend-stack-simplifying"] },
+] as const;
+
+export function getTopic(slug: string) {
+  return topics.find((topic) => topic.slug === slug);
+}
+
+export function getTopicArticles(slug: string) {
+  const topic = getTopic(slug);
+  return topic ? topic.articleSlugs.map((articleSlug) => getArticle(articleSlug)).filter((article): article is Article => Boolean(article)) : [];
+}
+
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug);
 }

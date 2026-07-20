@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { featuredArticles as stories, quickReadArticles as quickReads } from "./articles";
+import { featuredArticles as stories, quickReadArticles as quickReads, topics } from "./articles";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -92,8 +92,8 @@ export default function Home() {
           <div><span className="kicker">03 / Explore</span><h2>Follow your curiosity.</h2></div>
         </div>
         <div className="topic-cloud">
-          {["Artificial Intelligence", "Cybersecurity", "Web Development", "Cloud", "Open Source", "Hardware", "Future of Work"].map((topic, index) => (
-            <a href="#stories" key={topic}><sup>0{index + 1}</sup>{topic}<Arrow /></a>
+          {topics.map((topic, index) => (
+            <a href={`/topics/${topic.slug}`} key={topic.slug}><sup>0{index + 1}</sup>{topic.name}<Arrow /></a>
           ))}
         </div>
       </section>
