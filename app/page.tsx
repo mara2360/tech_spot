@@ -40,11 +40,10 @@ export default function Home() {
       </section>
 
       <section className="ticker" aria-label="Trending topics">
-        <span>Trending now</span><i />
-        <a href="#ai-assistants-to-ai-teammates">AI agents</a><i />
-        <a href="#security-as-a-product-feature">Passkeys</a><i />
-        <a href="#ambient-computing-is-ready">Spatial computing</a><i />
-        <a href="#new-economics-of-open-source">Open models</a>
+        <a className="ticker-active" href="#stories">Latest</a><i />
+        <a href="#quick-reads">Quick reads</a><i />
+        <a href="#topics">Explore</a><i />
+        <a href="#newsletter">The weekly brief</a>
       </section>
 
       <section className="stories section" id="stories">
@@ -68,7 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quick-section section">
+      <section className="quick-section section" id="quick-reads">
         <div className="quick-intro">
           <span className="kicker">02 / Quick reads</span>
           <h2>Catch up<br />in ten.</h2>

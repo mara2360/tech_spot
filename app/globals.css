@@ -28,7 +28,8 @@ nav a:hover, nav a.active { opacity:1; }
 .hero-orbit-one { width:460px; height:460px; right:12%; top:70px; }
 .hero-orbit-two { width:300px; height:300px; right:20%; top:150px; background:radial-gradient(circle at 50% 50%,rgba(128,105,255,.18),transparent 63%); }
 .ticker { min-height:62px; background:var(--ink); color:white; display:flex; align-items:center; gap:26px; padding:0 4.5vw; overflow:auto; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; white-space:nowrap; }
-.ticker>span { color:var(--lime); font-weight:800; }.ticker i { width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,.35); }.ticker a{transition:.2s}.ticker a:hover{color:var(--lime)}
+.ticker .ticker-active { color:var(--lime); font-weight:800; }.ticker i { width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,.35); }.ticker a{transition:.2s}.ticker a:hover{color:var(--lime)}
+.stories,.quick-section,.topics,.newsletter{scroll-margin-top:95px}
 .story-card[id],.quick-row[id]{scroll-margin-top:110px}
 .section { padding:120px 4.5vw; }
 .section-heading { display:grid; grid-template-columns:1fr; gap:28px; align-items:start; margin-bottom:65px; }
