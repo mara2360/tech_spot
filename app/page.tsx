@@ -1,42 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-
-const stories = [
-  {
-    category: "Artificial Intelligence",
-    date: "July 18, 2026",
-    time: "8 min read",
-    title: "The quiet shift from AI assistants to AI teammates",
-    summary: "A practical look at how autonomous workflows are changing the way modern teams build, research, and ship.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=85",
-    accent: "violet",
-  },
-  {
-    category: "Cybersecurity",
-    date: "July 15, 2026",
-    time: "6 min read",
-    title: "Security is becoming a product feature",
-    summary: "Why the best engineering teams are moving trust, privacy, and resilience to the center of the roadmap.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
-    accent: "cyan",
-  },
-  {
-    category: "Open Source",
-    date: "July 11, 2026",
-    time: "5 min read",
-    title: "The new economics of open source",
-    summary: "Maintainers are rewriting the playbook for sustainable software—and the ecosystem is better for it.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=85",
-    accent: "lime",
-  },
-];
-
-const quickReads = [
-  { number: "01", topic: "Hardware", title: "Why ambient computing is finally ready", time: "4 min" },
-  { number: "02", topic: "Development", title: "The frontend stack is simplifying again", time: "7 min" },
-  { number: "03", topic: "Cloud", title: "Smaller models, faster infrastructure", time: "5 min" },
-];
+import { featuredArticles as stories, quickReadArticles as quickReads } from "./articles";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -90,13 +55,13 @@ export default function Home() {
         <div className="story-grid">
           {stories.map((story, index) => (
             <article className={`story-card story-${index + 1}`} key={story.title}>
-              <a className="story-image" href="#newsletter" aria-label={`Read ${story.title}`}>
+              <a className="story-image" href={`/articles/${story.slug}`} aria-label={`Read ${story.title}`}>
                 <img src={story.image} alt="" />
                 <span className={`story-tag ${story.accent}`}>{story.category}</span>
                 <span className="image-arrow"><Arrow /></span>
               </a>
               <div className="story-meta"><span>{story.date}</span><span>{story.time}</span></div>
-              <h3><a href="#newsletter">{story.title}</a></h3>
+              <h3><a href={`/articles/${story.slug}`}>{story.title}</a></h3>
               <p>{story.summary}</p>
             </article>
           ))}
@@ -110,12 +75,12 @@ export default function Home() {
           <p>The essential context, minus the endless scroll.</p>
         </div>
         <div className="quick-list">
-          {quickReads.map((item) => (
-            <a href="#newsletter" className="quick-row" key={item.number}>
-              <span className="quick-number">{item.number}</span>
-              <span className="quick-topic">{item.topic}</span>
+          {quickReads.map((item, index) => (
+            <a href={`/articles/${item.slug}`} className="quick-row" key={item.slug}>
+              <span className="quick-number">0{index + 1}</span>
+              <span className="quick-topic">{item.category}</span>
               <strong>{item.title}</strong>
-              <span className="quick-time">{item.time}</span>
+              <span className="quick-time">{item.time.replace(" read", "")}</span>
               <Arrow />
             </a>
           ))}
