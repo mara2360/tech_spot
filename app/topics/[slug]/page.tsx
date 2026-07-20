@@ -37,6 +37,29 @@ export default async function TopicPage({ params }: PageProps) {
       </section>
 
       <section className="topic-results">
+        <div className="filter-panel">
+          <div className="filter-panel-copy">
+            <span className="kicker">Filter stories</span>
+            <p>Choose a category to browse the ideas, reporting, and perspectives that interest you.</p>
+          </div>
+          <nav className="topic-filters" aria-label="Filter articles by category">
+            {topics.map((filterTopic, index) => {
+              const isActive = filterTopic.slug === topic.slug;
+              return (
+                <Link
+                  href={`/topics/${filterTopic.slug}`}
+                  className={isActive ? "active" : ""}
+                  aria-current={isActive ? "page" : undefined}
+                  key={filterTopic.slug}
+                >
+                  <span>0{index + 1}</span>
+                  <strong>{filterTopic.name}</strong>
+                  <i aria-hidden="true">{isActive ? "✓" : "↗"}</i>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
         <div className="topic-results-heading"><span className="kicker">Latest coverage</span><span>{topicArticles.length} curated stories</span></div>
         <div className="topic-article-grid">
           {topicArticles.map((article, index) => (
