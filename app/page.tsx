@@ -41,10 +41,10 @@ export default function Home() {
 
       <section className="ticker" aria-label="Trending topics">
         <span>Trending now</span><i />
-        <a href="#stories">AI agents</a><i />
-        <a href="#stories">Passkeys</a><i />
-        <a href="#stories">Spatial computing</a><i />
-        <a href="#stories">Open models</a>
+        <a href="/topics/artificial-intelligence">AI agents</a><i />
+        <a href="/topics/cybersecurity">Passkeys</a><i />
+        <a href="/topics/hardware">Spatial computing</a><i />
+        <a href="/topics/open-source">Open models</a>
       </section>
 
       <section className="stories section" id="stories">
