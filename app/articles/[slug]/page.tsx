@@ -29,7 +29,7 @@ export default async function ArticlePage({ params }: PageProps) {
     <main className="article-page">
       <header className="site-header article-header">
         <Link className="brand" href="/" aria-label="TechSpot home"><span className="brand-mark">T</span><span>TechSpot</span></Link>
-        <nav aria-label="Main navigation"><Link className="active" href="/#stories">Stories</Link><Link href="/#topics">Topics</Link><Link href="/about">About</Link></nav>
+        <nav aria-label="Main navigation"><Link className="active" href="/stories">Stories</Link><Link href="/topics">Topics</Link><Link href="/about">About</Link></nav>
         <Link className="header-cta" href="/#newsletter">Get the brief <span aria-hidden="true">↗</span></Link>
       </header>
 

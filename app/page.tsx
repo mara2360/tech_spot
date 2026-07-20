@@ -21,8 +21,8 @@ export default function Home() {
           <span>TechSpot</span>
         </a>
         <nav aria-label="Main navigation">
-          <a className="active" href="#stories">Stories</a>
-          <a href="#topics">Topics</a>
+          <a className="active" href="/stories">Stories</a>
+          <a href="/topics">Topics</a>
           <a href="/about">About</a>
         </nav>
         <a className="header-cta" href="#newsletter">Get the brief <Arrow /></a>
@@ -41,10 +41,10 @@ export default function Home() {
 
       <section className="ticker" aria-label="Trending topics">
         <span>Trending now</span><i />
-        <a href="/topics/artificial-intelligence">AI agents</a><i />
-        <a href="/topics/cybersecurity">Passkeys</a><i />
-        <a href="/topics/hardware">Spatial computing</a><i />
-        <a href="/topics/open-source">Open models</a>
+        <a href="#ai-assistants-to-ai-teammates">AI agents</a><i />
+        <a href="#security-as-a-product-feature">Passkeys</a><i />
+        <a href="#ambient-computing-is-ready">Spatial computing</a><i />
+        <a href="#new-economics-of-open-source">Open models</a>
       </section>
 
       <section className="stories section" id="stories">
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
         <div className="story-grid">
           {stories.map((story, index) => (
-            <article className={`story-card story-${index + 1}`} key={story.title}>
+            <article className={`story-card story-${index + 1}`} id={story.slug} key={story.title}>
               <a className="story-image" href={`/articles/${story.slug}`} aria-label={`Read ${story.title}`}>
                 <img src={story.image} alt="" />
                 <span className={`story-tag ${story.accent}`}>{story.category}</span>
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
         <div className="quick-list">
           {quickReads.map((item, index) => (
-            <a href={`/articles/${item.slug}`} className="quick-row" key={item.slug}>
+            <a href={`/articles/${item.slug}`} className="quick-row" id={item.slug} key={item.slug}>
               <span className="quick-number">0{index + 1}</span>
               <span className="quick-topic">{item.category}</span>
               <strong>{item.title}</strong>
