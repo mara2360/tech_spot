@@ -126,6 +126,8 @@ footer{background:var(--ink);color:#f1efe8;padding:80px 4.5vw 28px}.footer-top{d
 @media(max-width:800px){.topic-hero{min-height:560px;padding-bottom:55px}.topic-hero>p{margin-left:0;font-size:19px}.topic-orbit{right:-220px;top:70px}.filter-panel{gap:28px;margin-bottom:75px}.filter-panel-copy{display:block}.filter-panel-copy p{margin-top:16px}.topic-filters a{min-height:68px;min-width:220px;flex-basis:220px}.topic-article-grid{grid-template-columns:1fr;gap:70px}.topic-card-number{top:auto;bottom:0}.topic-results{padding-top:75px}}
 
 /* About page */
+.about-ticker { background:var(--ink); color:#fff; }
+.about-ticker .ticker-active,.about-ticker a:hover { color:var(--lime); }
 .about-hero { min-height:760px; padding:88px 4.5vw 70px; position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
 .about-hero h1 { position:relative; z-index:1; margin:55px 0 48px; max-width:1200px; font-size:clamp(67px,9vw,138px); line-height:.94; letter-spacing:-.068em; }
 .about-hero h1 em { color:var(--violet); font-family:Georgia,serif; font-weight:400; }

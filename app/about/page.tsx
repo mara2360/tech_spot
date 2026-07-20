@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="about-orbit" aria-hidden="true"><span>T</span></div>
       </section>
 
-      <nav className="ticker" aria-label="About page sections">
+      <nav className="ticker about-ticker" aria-label="About page sections">
         <a className="ticker-active" href="#purpose">Our purpose</a><i />
         <a href="#principles">What guides us</a><i />
         <a href="#team">The team</a><i />
