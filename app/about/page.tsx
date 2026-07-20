@@ -22,19 +22,19 @@ export default function AboutPage() {
         <Link className="header-cta" href="/#newsletter">Get the brief <span aria-hidden="true">↗</span></Link>
       </header>
 
-      <nav className="ticker" aria-label="About page sections">
-        <a className="ticker-active" href="#purpose">Purpose</a><i />
-        <a href="#principles">Principles</a><i />
-        <a href="#team">Team</a><i />
-        <a href="#stay-curious">Stay curious</a>
-      </nav>
-
       <section className="about-hero">
         <span className="kicker">About TechSpot</span>
         <h1>Technology is<br />complicated.<br /><em>We make it clear.</em></h1>
         <p>TechSpot is an independent publication for people who want to understand where technology is going—and what it means before it arrives.</p>
         <div className="about-orbit" aria-hidden="true"><span>T</span></div>
       </section>
+
+      <nav className="ticker" aria-label="About page sections">
+        <a className="ticker-active" href="#purpose">Our purpose</a><i />
+        <a href="#principles">What guides us</a><i />
+        <a href="#team">The team</a><i />
+        <a href="#stay-curious">The weekly brief</a>
+      </nav>
 
       <section className="about-intro section" id="purpose">
         <span className="kicker">Our purpose</span>
