@@ -79,11 +79,6 @@ export default async function TopicPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="topic-more">
-        <span className="kicker">Keep exploring</span>
-        <div>{topics.filter(({ slug }) => slug !== topic.slug).slice(0, 4).map((item) => <Link href={`/topics/${item.slug}`} key={item.slug}>{item.name}<span>↗</span></Link>)}</div>
-      </section>
-
       <footer className="article-footer"><Link className="brand footer-brand" href="/"><span className="brand-mark">T</span><span>TechSpot</span></Link><span>© 2026 TechSpot</span><Link href="/#topics">All topics →</Link></footer>
     </main>
   );
