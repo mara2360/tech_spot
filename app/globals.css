@@ -20,7 +20,7 @@ nav a:hover, nav a.active { opacity:1; }
 .eyebrow span { width:7px; height:7px; border-radius:50%; background:var(--violet); }
 .hero h1 { position:relative; z-index:2; font-size:clamp(74px,11vw,168px); line-height:.78; letter-spacing:-.08em; margin:64px 0 54px; font-weight:800; max-width:1200px; }
 .hero h1 em { font-family:Georgia,serif; font-weight:400; color:var(--violet); }
-.hero-bottom { width:45%; margin-left:auto; display:flex; align-items:end; justify-content:space-between; position:relative; z-index:2; }
+.hero-bottom { width:100%; margin-left:0; display:flex; align-items:end; justify-content:space-between; position:relative; z-index:2; }
 .hero-bottom p { max-width:390px; font-size:17px; line-height:1.55; margin:0; }
 .circle-link { flex:0 0 auto; width:62px; height:62px; display:grid; place-items:center; border:1px solid var(--ink); border-radius:50%; font-size:23px; transition:.25s; }
 .circle-link:hover { background:var(--ink); color:var(--paper); transform:translateY(4px); }
@@ -94,7 +94,7 @@ footer{background:var(--ink);color:#f1efe8;padding:80px 4.5vw 28px}.footer-top{d
 .topic-hero { min-height:620px; padding:70px 4.5vw 80px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; border-bottom:1px solid var(--line); }
 .topic-hero .article-back { position:absolute; top:55px; left:4.5vw; }
 .topic-hero h1 { position:relative; z-index:1; margin:27px 0 25px; max-width:1050px; font-size:clamp(68px,10vw,150px); line-height:.83; letter-spacing:-.08em; }
-.topic-hero>p { position:relative; z-index:1; max-width:610px; margin:0 0 0 auto; font-family:Georgia,serif; font-size:23px; line-height:1.5; color:#4d4b45; }
+.topic-hero>p { position:relative; z-index:1; max-width:610px; margin:0; font-family:Georgia,serif; font-size:23px; line-height:1.5; color:#4d4b45; }
 .topic-orbit { position:absolute; width:440px; height:440px; border:1px solid rgba(128,105,255,.45); border-radius:50%; right:12%; top:70px; }
 .topic-orbit:after { content:""; position:absolute; width:280px; height:280px; border:1px solid rgba(128,105,255,.45); border-radius:50%; top:80px; left:80px; }
 .topic-orbit span { position:absolute; width:18px; height:18px; border-radius:50%; background:var(--lime); top:40px; right:66px; }
@@ -119,3 +119,22 @@ footer{background:var(--ink);color:#f1efe8;padding:80px 4.5vw 28px}.footer-top{d
 .topic-card>p { max-width:530px; color:#56534d; line-height:1.65; font-size:14px; }
 .topic-read-link { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); margin-top:28px; padding-top:17px; font-size:10px; text-transform:uppercase; letter-spacing:1.2px; font-weight:800; }.topic-read-link:hover{color:var(--violet)}
 @media(max-width:800px){.topic-hero{min-height:560px;padding-bottom:55px}.topic-hero>p{margin-left:0;font-size:19px}.topic-orbit{right:-220px;top:70px}.filter-panel{grid-template-columns:1fr;gap:35px;margin-bottom:75px}.topic-filters{grid-template-columns:1fr}.topic-filters a{min-height:64px}.topic-article-grid{grid-template-columns:1fr;gap:70px}.topic-card-number{top:auto;bottom:0}.topic-results{padding-top:75px}}
+
+/* About page */
+.about-hero { min-height:760px; padding:88px 4.5vw 70px; position:relative; overflow:hidden; border-bottom:1px solid var(--line); }
+.about-hero h1 { position:relative; z-index:1; margin:55px 0 40px; max-width:1200px; font-size:clamp(67px,9vw,138px); line-height:.82; letter-spacing:-.075em; }
+.about-hero h1 em { color:var(--violet); font-family:Georgia,serif; font-weight:400; }
+.about-hero>p { position:relative; z-index:1; max-width:590px; margin:0; font-family:Georgia,serif; font-size:23px; line-height:1.5; color:#4d4b45; }
+.about-orbit { position:absolute; width:480px; height:480px; border:1px solid rgba(128,105,255,.4); border-radius:50%; right:9%; top:115px; display:grid; place-items:center; }
+.about-orbit:before { content:""; position:absolute; width:300px; height:300px; border:1px solid rgba(128,105,255,.4); border-radius:50%; }
+.about-orbit span { position:relative; z-index:1; width:130px; height:130px; border-radius:50%; background:var(--violet); color:white; display:grid; place-items:center; font-size:62px; font-weight:800; }
+.about-intro { display:grid; grid-template-columns:.7fr 1.5fr; gap:8vw; }
+.about-intro h2 { margin:0 0 35px; font-size:clamp(48px,6vw,84px); line-height:.95; letter-spacing:-.06em; }
+.about-intro p { max-width:770px; margin:0 0 25px; font-family:Georgia,serif; font-size:21px; line-height:1.72; color:#3c3a36; }
+.about-principles { background:#d9d5cb; }
+.principle-list { border-top:1px solid var(--ink); }
+.principle-list article { min-height:145px; display:grid; grid-template-columns:70px 1fr 1.1fr; gap:35px; align-items:center; border-bottom:1px solid var(--ink); }
+.principle-list article>span { font-size:10px; letter-spacing:1px; color:#77746c; }.principle-list h3{font-size:clamp(27px,3vw,43px);letter-spacing:-.04em;margin:0}.principle-list p{max-width:480px;font-size:14px;line-height:1.65;color:#55534d}
+.about-team { display:grid; grid-template-columns:1fr 1fr; gap:9vw; }.about-team h2{font-size:clamp(55px,7vw,96px);line-height:.92;letter-spacing:-.065em;margin:28px 0 0}.about-team-copy{align-self:end}.about-team-copy p{font-family:Georgia,serif;font-size:20px;line-height:1.68;color:#45433e}.about-team-copy a{margin-top:40px;padding-top:18px;border-top:1px solid var(--ink);display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800}.about-team-copy a:hover{color:var(--violet)}
+.about-cta { background:var(--violet); padding:100px 4.5vw; position:relative; }.about-cta h2{font-size:clamp(64px,9vw,130px);line-height:.84;letter-spacing:-.075em;margin:35px 0 55px}.about-cta>a{display:flex;justify-content:space-between;align-items:center;max-width:430px;border-bottom:2px solid var(--ink);padding-bottom:14px;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:800}
+@media(max-width:800px){.about-hero{min-height:650px;padding-top:65px}.about-hero h1{margin-top:85px}.about-hero>p{font-size:19px}.about-orbit{right:-250px;top:85px}.about-intro,.about-team{grid-template-columns:1fr}.principle-list article{grid-template-columns:40px 1fr;gap:20px;padding:27px 0}.principle-list article p{grid-column:2}.about-team-copy{margin-top:20px}}

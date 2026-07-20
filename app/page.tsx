@@ -23,7 +23,7 @@ export default function Home() {
         <nav aria-label="Main navigation">
           <a className="active" href="#stories">Stories</a>
           <a href="#topics">Topics</a>
-          <a href="#about">About</a>
+          <a href="/about">About</a>
         </nav>
         <a className="header-cta" href="#newsletter">Get the brief <Arrow /></a>
       </header>
@@ -122,7 +122,7 @@ export default function Home() {
           <a className="brand footer-brand" href="#top"><span className="brand-mark">T</span><span>TechSpot</span></a>
           <p>Technology is complicated.<br />Understanding it shouldn’t be.</p>
           <div className="footer-links"><a href="#stories">Stories</a><a href="#topics">Topics</a><a href="#newsletter">Newsletter</a></div>
-          <div className="footer-links"><a href="#about">About</a><a href="mailto:hello@techspot.com">Contact</a><a href="#top">Back to top ↑</a></div>
+          <div className="footer-links"><a href="/about">About</a><a href="mailto:hello@techspot.com">Contact</a><a href="#top">Back to top ↑</a></div>
         </div>
         <div className="footer-bottom"><span>© 2026 TechSpot</span><span>Independent. Curious. Human.</span></div>
       </footer>

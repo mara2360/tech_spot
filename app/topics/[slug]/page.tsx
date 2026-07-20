@@ -24,7 +24,7 @@ export default async function TopicPage({ params }: PageProps) {
     <main className="topic-page">
       <header className="site-header article-header">
         <Link className="brand" href="/" aria-label="TechSpot home"><span className="brand-mark">T</span><span>TechSpot</span></Link>
-        <nav aria-label="Main navigation"><Link href="/#stories">Stories</Link><Link className="active" href="/#topics">Topics</Link><Link href="/#about">About</Link></nav>
+        <nav aria-label="Main navigation"><Link href="/#stories">Stories</Link><Link className="active" href="/#topics">Topics</Link><Link href="/about">About</Link></nav>
         <Link className="header-cta" href="/#newsletter">Get the brief <span aria-hidden="true">↗</span></Link>
       </header>
 
