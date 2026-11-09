@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LogoMark from "./LogoMark";
 
 type Section = "home" | "stories" | "topics" | "about";
 
@@ -19,7 +20,7 @@ export default function SiteHeader({ active = "home" }: { active?: Section }) {
       <header className="site-header">
         <div className="wrap header-row">
           <Link className="brand" href="/" aria-label="TechSpot home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <LogoMark />
             <span className="brand-name">TechSpot</span>
             <span className="brand-sub">Blog</span>
           </Link>
