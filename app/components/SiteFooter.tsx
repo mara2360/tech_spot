@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LogoMark from "./LogoMark";
 import { topics } from "../articles";
 
 export default function SiteFooter() {
@@ -7,7 +8,7 @@ export default function SiteFooter() {
       <div className="wrap footer-grid">
         <div className="footer-brand">
           <Link className="brand" href="/" aria-label="TechSpot home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <LogoMark />
             <span className="brand-name">TechSpot</span>
           </Link>
           <p>Technology is complicated. Understanding it shouldn’t be.</p>
