@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticle } from "../../articles";
+import SiteHeader from "../../components/SiteHeader";
+import SiteFooter from "../../components/SiteFooter";
+import Newsletter from "../../components/Newsletter";
+import Byline from "../../components/Byline";
+import { CategoryLabel, PostCard } from "../../components/PostViews";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -15,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${article.title} — TechSpot`,
     description: article.dek,
-    openGraph: { title: article.title, description: article.dek, type: "article", images: ["/og.png"] },
+    openGraph: { title: article.title, description: article.dek, type: "article", images: [article.image] },
   };
 }
 
@@ -23,30 +28,34 @@ export default async function ArticlePage({ params }: PageProps) {
   const article = getArticle((await params).slug);
   if (!article) notFound();
   const currentIndex = articles.findIndex(({ slug }) => slug === article.slug);
-  const nextArticle = articles[(currentIndex + 1) % articles.length];
+  const readNext = [1, 2, 3].map((step) => articles[(currentIndex + step) % articles.length]);
+  const shareUrl = `https://tech-spot-blog.vercel.app/articles/${article.slug}`;
 
   return (
-    <main className="article-page">
-      <header className="site-header article-header">
-        <Link className="brand" href="/" aria-label="TechSpot home"><span className="brand-mark">T</span><span>TechSpot</span></Link>
-        <nav aria-label="Main navigation"><Link className="active" href="/stories">Stories</Link><Link href="/topics">Topics</Link><Link href="/about">About</Link></nav>
-        <Link className="header-cta" href="/#newsletter">Get the brief <span aria-hidden="true">↗</span></Link>
-      </header>
+    <>
+      <SiteHeader active="stories" />
+      <main id="content">
+        <article>
+          <header className="article-head">
+            <Link className="back-link" href="/stories">← All stories</Link>
+            <CategoryLabel article={article} />
+            <h1>{article.title}</h1>
+            <p className="dek">{article.dek}</p>
+            <div className="article-meta">
+              <Byline author={article.author} meta={`${article.date} · ${article.time}`} size={40} />
+              <div className="share">
+                <a href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(shareUrl)}`}>Email</a>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href={`https://x.com/intent/post?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer">X</a>
+              </div>
+            </div>
+          </header>
 
-      <article>
-        <div className="article-hero">
-          <Link className="article-back" href="/#stories">← All stories</Link>
-          <div className="article-labels"><span className={`story-tag static-tag ${article.accent}`}>{article.category}</span><span>{article.date}</span><span>{article.time}</span></div>
-          <h1>{article.title}</h1>
-          <p className="article-dek">{article.dek}</p>
-          <div className="article-byline"><span className="author-dot">{article.author.charAt(0)}</span><span>By <strong>{article.author}</strong></span><span>TechSpot Editorial</span></div>
-        </div>
+          <figure className="article-lead">
+            <img src={article.image} alt="" fetchPriority="high" />
+          </figure>
 
-        <figure className="article-lead"><img src={article.image} alt="" /><figcaption>{article.category} / TechSpot</figcaption></figure>
-
-        <div className="article-layout">
-          <aside className="article-share"><span>Share</span><a href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(`https://techspot-modern-journal.md-ramshaw.chatgpt.site/articles/${article.slug}`)}`}>Email</a><a href="#top">Top ↑</a></aside>
-          <div className="article-body" id="top">
+          <div className="prose">
             {article.sections.map((section, index) => (
               <section key={section.heading ?? index}>
                 {section.heading && <h2>{section.heading}</h2>}
@@ -54,16 +63,25 @@ export default async function ArticlePage({ params }: PageProps) {
                 {section.quote && <blockquote>{section.quote}</blockquote>}
               </section>
             ))}
+            <div className="article-end">
+              <span>Filed under</span> <CategoryLabel article={article} />
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <section className="next-story">
-        <span className="kicker">Read next</span>
-        <Link href={`/articles/${nextArticle.slug}`}><span>{nextArticle.category}</span><strong>{nextArticle.title}</strong><i aria-hidden="true">→</i></Link>
-      </section>
+        <section className="wrap section" aria-labelledby="next-heading">
+          <div className="section-head">
+            <h2 id="next-heading">Read next</h2>
+            <Link className="more-link" href="/stories">All stories →</Link>
+          </div>
+          <div className="post-grid">
+            {readNext.map((next) => <PostCard article={next} key={next.slug} />)}
+          </div>
+        </section>
 
-      <footer className="article-footer"><Link className="brand footer-brand" href="/"><span className="brand-mark">T</span><span>TechSpot</span></Link><span>© 2026 TechSpot</span><Link href="/#stories">More stories →</Link></footer>
-    </main>
+        <Newsletter />
+      </main>
+      <SiteFooter />
+    </>
   );
 }
