@@ -69,7 +69,7 @@ img { display: block; max-width: 100%; }
 .announce { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; padding: 9px 24px; background: var(--ink); color: #fff; font-size: 13px; text-align: center; }
 .announce a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: saturate(1.6) blur(12px); -webkit-backdrop-filter: saturate(1.6) blur(12px); border-bottom: 1px solid var(--line); }
-.header-row { display: flex; align-items: center; gap: 30px; height: 68px; }
+  .header-row { display: flex; align-items: center; gap: 24px; height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; line-height: 1; letter-spacing: -.02em; }
 .brand-mark { display: block; flex: none; width: 34px; height: 34px; color: var(--ink); transition: transform .3s ease; }
 .brand:hover .brand-mark { transform: scale(1.06); }
