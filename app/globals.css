@@ -70,11 +70,11 @@ img { display: block; max-width: 100%; }
 .announce a { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: saturate(1.6) blur(12px); -webkit-backdrop-filter: saturate(1.6) blur(12px); border-bottom: 1px solid var(--line); }
 .header-row { display: flex; align-items: center; gap: 40px; height: 68px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -.02em; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; line-height: 1; letter-spacing: -.02em; }
 .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--ink); color: #fff; font-size: 15px; font-weight: 700; }
-.brand-sub { font-weight: 500; color: var(--muted); padding-left: 10px; border-left: 1px solid var(--line); }
-.main-nav { display: flex; gap: 28px; font-size: 15px; font-weight: 500; }
-.main-nav a { color: var(--muted); transition: color .2s; }
+.brand-sub { display: inline-flex; align-items: center; height: 20px; font-size: 15px; font-weight: 500; letter-spacing: 0; line-height: 1; color: var(--muted); padding-left: 12px; margin-left: 2px; border-left: 1px solid var(--line); }
+.main-nav { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; line-height: 1; }
+.main-nav a { display: inline-flex; align-items: center; height: 20px; color: var(--muted); transition: color .2s; }
 .main-nav a:hover, .main-nav a.is-active { color: var(--ink); }
 .header-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 .mobile-nav { display: none; position: relative; }
